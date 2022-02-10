@@ -30,7 +30,8 @@ export const genDiff = (data1, data2) => {
     }
     return acc;
   }, {});
-  return newObj;
+  const neww = JSON.stringify(newObj);
+  return neww.replace(/"/g, '').replace(/,/g, '');
 };
 
 export default genDiff;
