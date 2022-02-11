@@ -15,4 +15,3 @@ jobs:
     - run: make install
     - run: make jest
     - run: make lint
-    - run: make test
