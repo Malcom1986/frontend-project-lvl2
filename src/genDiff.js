@@ -10,10 +10,12 @@ export const getData = (pathStr) => {
 };
 
 export const genDiff = (data1, data2) => {
-  const unionD = _.union(_.keys(data1), _.keys(data2)).sort();
+  const d1 = getData(data1);
+  const d2 = getData(data2)
+  const unionD = _.union(_.keys(d1), _.keys(d2)).sort();
 
-  const copy1 = _.clone(data1);
-  const copy2 = _.clone(data2);
+  const copy1 = _.clone(d1);
+  const copy2 = _.clone(d2);
 
   const newObj = unionD.reduce((acc, item) => {
     if (copy1[item] === copy2[item]) {
@@ -30,8 +32,10 @@ export const genDiff = (data1, data2) => {
     }
     return acc;
   }, {});
-  const neww = JSON.stringify(newObj);
+  const neww = JSON.stringify(newObj, null, 2);
   return neww.replace(/"/g, '').replace(/,/g, '');
 };
+console.log(genDiff('__fixtures__/file1.json', '__fixtures__/file2.json'))
+
 
 export default genDiff;
