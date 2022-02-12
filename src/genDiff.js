@@ -1,13 +1,5 @@
-import fs from 'fs';
-import path from 'path';
 import _ from 'lodash';
-
-const getPath = (pathStr) => path.resolve(process.cwd(), pathStr);
-
-export const getData = (pathStr) => {
-  const data = fs.readFileSync(getPath(pathStr), 'utf-8');
-  return JSON.parse(data);
-};
+import getData from './parsers';
 
 const genDiff = (data1, data2) => {
   const d1 = getData(data1);

@@ -15,7 +15,7 @@ jobs:
     - run: make install
     - run: make jest
     - run: make lint
-    - name: Test & publish code coverage   
+    - name: code coverage 
       uses:  paambaati/codeclimate-action@v2.5.7
       env:
           CC_TEST_REPORTER_ID: ${{ secrets.CODE_CLIMATE_SAE }}
