@@ -19,8 +19,8 @@ test('check diff JSON', () => {
 });
 
 test('check diff YML', () => {
-  const file1Path = getFixturePath('file3.yml');
-  const file2Path = getFixturePath('file4.yml');
+  const file1Path = getFixturePath('file1.yml');
+  const file2Path = getFixturePath('file2.yml');
 
   const actual = genDiff(file1Path, file2Path);
   const plain = readFile('expect.txt');

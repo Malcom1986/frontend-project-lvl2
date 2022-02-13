@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import getData from './parsers';
+import getData from './parsers.js';
 
 const genDiff = (data1, data2) => {
   const d1 = getData(data1);
@@ -25,5 +25,5 @@ const genDiff = (data1, data2) => {
   const neww = JSON.stringify(newObj, null, 2);
   return neww.replace(/"/g, '').replace(/,/g, '');
 };
-
+console.log(genDiff('__fixtures__/file3.json', '__fixtures__/file4.json'));
 export default genDiff;
