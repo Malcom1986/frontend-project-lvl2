@@ -21,5 +21,5 @@ publish:
 jest:
 	NODE_OPTIONS=--experimental-vm-modules npx jest
 
-test-coverage: 
-	npx -n '--experimental-vm-modules  --no-warnings' jest --coverage
+# test-coverage: 
+# 	npx -n '--experimental-vm-modules  --no-warnings' jest --coverage
